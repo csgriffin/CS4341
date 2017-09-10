@@ -103,7 +103,7 @@ public class main {
 		
 		System.out.println("First node: " + firstNodeChar + " Second node: " + secondNodeChar + " Edge weight: " + connectionLength + "\n");
 	}
-	
+	//hello 
 	private static void readNextHeuristic(String nextLine) {
 		
 		// Get the node character.
