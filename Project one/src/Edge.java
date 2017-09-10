@@ -13,15 +13,15 @@ public class Edge {
 		this.edgeWeight = edgeWeight;
 	}
 		
-	public Node getNodeCon(String state) {
-		if(firstNode.getState().equals(state)) {
+	public Node getNodeCon(char state) {
+		if(firstNode.getState() == state) {
 			return secondNode;
 		}else {
 			return firstNode;
 		}
 	}
 	
-	public int getWeight() {
+	public float getWeight() {
 		return edgeWeight;
 	}
 }
