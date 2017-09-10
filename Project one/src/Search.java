@@ -17,14 +17,14 @@ public class Search {
 		ArrayList<Path> opendNodes;
 		ArrayList<Path> queue = new ArrayList<Path>();
 		     
-		queue.add(problem.getNode('S'));
+		queue.add(new Path(problem.getNode('S')));
 		while(true) {
 			if(queue.get(0).getLastNode() == null) {
 				return null;
 			}
 			Node curNode = queue.get(0).getLastNode();
 			
-			if(curNode.state.equals(problem.solution)){
+			if(curNode.state == problem.solution){
 				return curNode;
 			}
 			

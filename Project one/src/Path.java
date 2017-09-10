@@ -6,6 +6,15 @@ public class Path {
 	float fCost;
 	int depth;
 	
+	
+	public Path() {
+		
+	}
+	
+	public Path(Node initialNode) {
+		nodes.add(initialNode);
+	}
+	
 	public void addAll(ArrayList<Node> path) {
 		// TODO Auto-generated method stub
 		nodes.addAll(path);
@@ -26,7 +35,7 @@ public class Path {
 		fCost = gCost + nodes.get(0).getHCost();
 		return fCost;
 	}
-	public void addGCost(int newG) {
+	public void addGCost(float newG) {
 		gCost += newG;
 	}
 }

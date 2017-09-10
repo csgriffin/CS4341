@@ -3,14 +3,14 @@ import java.util.ArrayList;
 public class Problem {
 
 	public ArrayList<Node> nodes;
-	public String solution;
+	public char solution;
 	public int numExpanded;
 	public boolean iterative;
 	
 	
 	public Problem() {
 		nodes = new ArrayList<Node>();
-		solution = null;
+		solution = 'G';
 		numExpanded = 0;
 		iterative = false;
 	}
