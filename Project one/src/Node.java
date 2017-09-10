@@ -11,7 +11,7 @@ public class Node {
 	public Node(char state){
 		this.state = state;
 		connections = new ArrayList<Edge>();
-		childern = new ArrayList<Node>();
+		children = new ArrayList<Node>();
 		parent = null;
 		expanded = false;
 	}
@@ -39,8 +39,6 @@ public class Node {
 				}
 			}
 			return expPath;
-		}
-		return null;
 	}
 
 	private void getChildren() {
