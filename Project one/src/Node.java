@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Node {
 	char state;
 	ArrayList<Edge> connections;
-	ArrayList<Node>;
+	ArrayList<Node> children;
 	Node parent;
 	private float hCost;
 	boolean expanded;
