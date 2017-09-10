@@ -12,5 +12,16 @@ public class Edge {
 		this.secondNode = secondNode;
 		this.edgeWeight = edgeWeight;
 	}
+		
+	public Node getNodeCon(String state) {
+		if(firstNode.getState().equals(state)) {
+			return secondNode;
+		}else {
+			return firstNode;
+		}
+	}
 	
+	public int getWeight() {
+		return edgeWeight;
+	}
 }
