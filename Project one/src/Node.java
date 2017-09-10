@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Node {
-	String state;
+	char state;
 	ArrayList<Node> children;
 	Path path = null;
 	Node parent;
@@ -11,7 +11,7 @@ public class Node {
 	int fCost;
 	boolean expanded = false;
 	
-	public Node(String state){
+	public Node(char state){
 		this.state = state;
 		
 	}
