@@ -31,10 +31,7 @@ public class Search {
 			
 			opendNodes = curNode.expand();
 			
-			switch(searchMeth) {
-			case BEAM_SEARCH:
-				return null;
-			}
+			queue = searchMeth.add(opendNodes, queue);
 		
 		}
 	}

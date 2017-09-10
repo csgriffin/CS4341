@@ -1,7 +1,8 @@
+import java.util.ArrayList;
 
 public class Path {
-	Node[] nodes = new Node[10];
-	public Path(Node[] nodes) {
+	ArrayList<Node> nodes;
+	public Path(ArrayList<Node> nodes) {
 		this.nodes = nodes;
 	}
 

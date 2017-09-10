@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Node {
 	String state;
-	Node[] children;
+	ArrayList<Node> children;
 	Path path = null;
 	
 	public Node(String state){
@@ -10,7 +10,9 @@ public class Node {
 	}
 	
 	public ArrayList<Node> expand() {
-		// TODO Auto-generated method stub
-		return null;
+		for(int i = 1;i <= children.size();i++) {
+			children.get(i).path().addall() 
+		}
+		return children;
 	}
 }
