@@ -42,6 +42,7 @@ public class Problem {
 		// Create the edge and add it to the nodes.
 		Edge edge = new Edge(firstNode, secondNode, edgeWeight);
 		
+		//i add the children  in the node this is why there was a overflow
 		firstNode.connections.add(edge);
 		//firstNode.children.add(secondNode);
 		secondNode.connections.add(edge);
