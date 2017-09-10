@@ -13,7 +13,7 @@ public class Search {
 	public Search() {
 	}
 
-	public Node genSerch(Problem problem, SearchMethods searchMeth){
+	public Node genSearch(Problem problem, SearchMethods searchMeth){
 		ArrayList<Path> opendNodes;
 		ArrayList<Path> queue = new ArrayList<Path>();
 		     

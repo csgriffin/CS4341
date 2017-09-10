@@ -56,7 +56,15 @@ public class main {
 		}
 		
 		
+		// Create a Search.
 		Search search = new Search();
+		
+		
+		// Initiate an A* search.
+		AStarSearchMethod aStar = new AStarSearchMethod();
+		search.genSearch(problem, aStar);
+		
+		
 		/*SearchMethods searchMeth;
 		switch(args[1]) {
 			case "Beam Search":
