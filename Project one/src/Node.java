@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Node {
 	char state;
-	ArrayList<Node> children;
+	ArrayList<Edge> connections;
 	Path path = null;
 	Node parent;
 	int depth;
