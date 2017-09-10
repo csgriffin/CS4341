@@ -23,11 +23,19 @@ public class Node {
 	
 	public ArrayList<Node> expand() {
 		if(! expanded) {
-		for(int i = 1;i <= children.size();i++) {
-			children.get(i).path().addall(path);
+			for(int i = 0;i < children.size();i++) {
+				if(!children.get(i).expanded) {
+					children.get(i).getPath().addAll(path.getPathNode());
+					children.get(i).getPath().addOne(0 ,children.get(i));
+			}
 		}
 		return children;
 		}
 		return null;
+	}
+
+	public Path getPath() {
+		// TODO Auto-generated method stub
+		return path;
 	}
 }
