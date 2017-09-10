@@ -14,25 +14,24 @@ public class Search {
 	}
 
 	public Node genSerch(Problem problem, SearchMethods searchMeth){
-		ArrayList<Node> opendNodes;
-		ArrayList<Node> queue = new ArrayList<Node>();
-		return null;
-		/*queue.add(problem.initialNode);
+		ArrayList<Path> opendNodes;
+		ArrayList<Path> queue = new ArrayList<Node>();
+		     
+		queue.add(problem.initialNode);
 		while(true) {
-			if(queue.get(0) == null) {
+			if(queue.get(0).getLastNode() == null) {
 				return null;
 			}
-			Node curNode = queue.get(0);
+			Node curNode = queue.get(0).getLastNode();
+			
 			if(curNode.state.equals(problem.solution)){
-				return queue.get(0);
-				//or return curNode.state;
-				//or return path
+				return curNode;
 			}
 			
-			opendNodes = curNode.expand();
+			opendNodes = curNode.expand(queue.get(0));
 			
 			queue = searchMeth.add(opendNodes, queue);
 		
-		}*/
+		}
 	}
 }
