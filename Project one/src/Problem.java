@@ -43,9 +43,9 @@ public class Problem {
 		Edge edge = new Edge(firstNode, secondNode, edgeWeight);
 		
 		firstNode.connections.add(edge);
-		firstNode.children.add(secondNode);
+		//firstNode.children.add(secondNode);
 		secondNode.connections.add(edge);
-		secondNode.children.add(firstNode);
+		//secondNode.children.add(firstNode);
 		
 		
 	}
