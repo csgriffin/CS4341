@@ -3,6 +3,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class AStarSearchMethod extends SearchMethods{
+	@Override
 	public ArrayList<Path> add(ArrayList<Path> opendNodes, ArrayList<Path> queue) {
 		
 		for(int i = 0; i<opendNodes.size(); i++) {
@@ -21,11 +22,13 @@ public class AStarSearchMethod extends SearchMethods{
 						String first, second;
 						first = Character.toString(o1.getLastNode().state);
 						second = Character.toString(o2.getLastNode().state);
-						a = first.compareTo(second);
+						a = second.compareTo(first);
 					}
 					return a;
 				}
 		    });
+		
+		Collections.reverse(queue);
 		
 		return queue;
 	}	

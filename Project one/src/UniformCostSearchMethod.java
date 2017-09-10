@@ -25,6 +25,7 @@ public class UniformCostSearchMethod extends SearchMethods{
 					return a;
 				}
 		    });
+		Collections.reverse(queue);
 		return queue;
 	}
 }

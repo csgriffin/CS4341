@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 public class main {
@@ -7,7 +8,7 @@ public class main {
 	static Problem problem;
 	
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		
 		
 		// Create an empty problem.
@@ -17,8 +18,9 @@ public class main {
 		// Open file specified by user into a buffered stream.
 		String nextLine = null;
 		BufferedReader inputStream = null;
+		FileReader graphFile = new FileReader("graph.txt");
 		try {
-		inputStream = new BufferedReader(new FileReader(args[0]));
+		inputStream = new BufferedReader(graphFile);
 		
 		
 		// Get the first line.
