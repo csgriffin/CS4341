@@ -5,7 +5,7 @@ public class Node {
 	ArrayList<Edge> connections;
 	ArrayList<Node> children = new ArrayList<Node>();
 	Node parent;
-	int hCost;
+	private float hCost;
 	boolean expanded;
 	
 	public Node(char state){
@@ -51,13 +51,13 @@ public class Node {
 	}
 
 
-	public int getHCost() {
+	public float getHCost() {
 		return hCost;
 	}
-	public void addHCost(int hCost) {
+	public void addHCost(float hCost) {
 		this.hCost = hCost;
 	}
-	public String getState() {
+	public char getState() {
 		return state;
 	}
 }

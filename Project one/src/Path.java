@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class Path {
 	ArrayList<Node> nodes = new ArrayList<Node>();
-	int gCost;
-	int fCost;
+	float gCost;
+	float fCost;
 	int depth;
 	
 	public void addAll(ArrayList<Node> path) {
@@ -22,7 +22,7 @@ public class Path {
 		return nodes.get(0);
 	}
 	
-	public int getFCost() {
+	public float getFCost() {
 		fCost = gCost + nodes.get(0).getHCost();
 		return fCost;
 	}

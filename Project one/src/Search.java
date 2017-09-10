@@ -15,9 +15,9 @@ public class Search {
 
 	public Node genSerch(Problem problem, SearchMethods searchMeth){
 		ArrayList<Path> opendNodes;
-		ArrayList<Path> queue = new ArrayList<Node>();
+		ArrayList<Path> queue = new ArrayList<Path>();
 		     
-		queue.add(problem.initialNode);
+		queue.add(problem.getNode('S'));
 		while(true) {
 			if(queue.get(0).getLastNode() == null) {
 				return null;

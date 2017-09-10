@@ -19,8 +19,8 @@ public class AStarSearchMethod extends SearchMethods{
 					//If are the same, sort by alphabetical order
 					if (a == 0) {
 						String first, second;
-						first = o1.getLastNode().state;
-						second = o2.getLastNode().state;
+						first = Character.toString(o1.getLastNode().state);
+						second = Character.toString(o2.getLastNode().state);
 						a = first.compareTo(second);
 					}
 					return a;
