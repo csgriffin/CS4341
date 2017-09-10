@@ -2,9 +2,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class AStarSearchMethod extends SearchMethods{
+public class UniformCostSearchMethod extends SearchMethods{
 	public ArrayList<Path> add(ArrayList<Path> opendNodes, ArrayList<Path> queue) {
-		
 		for(int i = 0; i<opendNodes.size(); i++) {
 			queue.add(opendNodes.get(i));
 		}
@@ -14,7 +13,7 @@ public class AStarSearchMethod extends SearchMethods{
 				@Override
 				public int compare(Path o1, Path o2) {
 					int a;
-					a = Float.compare(o1.getFCost(), o2.getFCost());
+					a = Float.compare(o1.gCost, o2.gCost);
 					
 					//If are the same, sort by alphabetical order
 					if (a == 0) {
@@ -26,7 +25,6 @@ public class AStarSearchMethod extends SearchMethods{
 					return a;
 				}
 		    });
-		
 		return queue;
-	}	
+	}
 }
