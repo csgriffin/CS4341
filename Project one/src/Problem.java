@@ -8,6 +8,14 @@ public class Problem {
 	public boolean iterative;
 	
 	
+	public Problem() {
+		nodes = new ArrayList<Node>();
+		solution = null;
+		numExpanded = 0;
+		iterative = false;
+	}
+	
+	
 	public Node getNode(char nodeName) {
 		
 		// Search for the node and return it.
@@ -49,7 +57,8 @@ public class Problem {
 				
 		// Create the edge and add it to the nodes.
 		Edge edge = new Edge(firstNode, secondNode, edgeWeight);
-				
+		
+		
 		firstNode.connections.add(edge);
 		secondNode.connections.add(edge);
 	}

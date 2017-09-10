@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 
 public class main {
@@ -14,23 +15,49 @@ public class main {
 		
 		
 		// Open file specified by user into a buffered stream.
-		BufferedReader inputStream = new BufferedReader(new FileReader(args[1]));
+		String nextLine = null;
+		BufferedReader inputStream = null;
+		try {
+		inputStream = new BufferedReader(new FileReader(args[0]));
 		
 		
 		// Get the first line.
-		String nextLine = inputStream.readLine();
+		nextLine = inputStream.readLine();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		
 		
 		// Read lines until the line ##### is found.
-		while(nextLine != "#####") {
+		while(!nextLine.equals("#####")) {
 			readNextLine(nextLine);
+			try {
+				nextLine = inputStream.readLine();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+
+		// Skip #####
+		try {
 			nextLine = inputStream.readLine();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		// Read lines until the end of file.
+		while(!nextLine.equals("")) {
+			readNextHeuristic(nextLine);
+			try {
+				nextLine = inputStream.readLine();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
 		}
 		
 		
 		Search search = new Search();
-		problem.initialNode = new Node("S");
-		SearchMethods searchMeth;
+		/*SearchMethods searchMeth;
 		switch(args[1]) {
 			case "Beam Search":
 				searchMeth = SearchMethods.BEAM_SEARCH;
@@ -39,11 +66,11 @@ public class main {
 				searchMeth = SearchMethods.BEAM_SEARCH;
 		}
 		
-		search.genSerch(problem, searchMeth);
+		search.genSerch(problem, searchMeth);*/
 
 	}
 	
-	private static String readNextLine(String nextLine) {
+	private static void readNextLine(String nextLine) {
 		
 		// Get the node characters.
 		char firstNodeChar = nextLine.charAt(0);
@@ -74,8 +101,24 @@ public class main {
 		// Add a connection between the nodes.
 		problem.addEdge(firstNode, secondNode, connectionLength);
 		
+		System.out.println("First node: " + firstNodeChar + " Second node: " + secondNodeChar + " Edge weight: " + connectionLength + "\n");
+	}
+	
+	private static void readNextHeuristic(String nextLine) {
 		
-		return "";
+		// Get the node character.
+		char nodeChar = nextLine.charAt(0);
+		
+		// Get the heuristic.
+		float heuristic = Float.parseFloat(nextLine.substring(2));
+		
+		// The actual node.
+		Node node = problem.getNode(nodeChar);
+		
+		// Add the heuristic.
+		node.setHCost(heuristic);
+		
+		System.out.println("Node is: " + nodeChar + " Heuristic is: " + heuristic + "\n");
 	}
 
 }

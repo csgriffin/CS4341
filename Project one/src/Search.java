@@ -16,8 +16,8 @@ public class Search {
 	public Node genSerch(Problem problem, SearchMethods searchMeth){
 		ArrayList<Node> opendNodes;
 		ArrayList<Node> queue = new ArrayList<Node>();
-		     
-		queue.add(problem.initialNode);
+		return null;
+		/*queue.add(problem.initialNode);
 		while(true) {
 			if(queue.get(0) == null) {
 				return null;
@@ -33,6 +33,6 @@ public class Search {
 			
 			queue = searchMeth.add(opendNodes, queue);
 		
-		}
+		}*/
 	}
 }

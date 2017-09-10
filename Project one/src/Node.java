@@ -3,20 +3,27 @@ import java.util.ArrayList;
 public class Node {
 	char state;
 	ArrayList<Edge> connections;
-	Path path = null;
+	Path path;
 	Node parent;
 	int depth;
-	int gCost;
-	int hCost;
-	int fCost;
-	boolean expanded = false;
+	float gCost;
+	float hCost;
+	float fCost;
+	boolean expanded;
 	
 	public Node(char state){
 		this.state = state;
-		
+		connections = new ArrayList<Edge>();
+		path = null;
+		parent = null;
+		expanded = false;
 	}
 	
-	public void addChild(Node child) {
+	public void setHCost(float newHeuristic) {
+		hCost = newHeuristic;
+	}
+	
+	/*public void addChild(Node child) {
 		children.add(child);
 		
 	}
@@ -32,7 +39,7 @@ public class Node {
 		return children;
 		}
 		return null;
-	}
+	}*/
 
 	public Path getPath() {
 		// TODO Auto-generated method stub
