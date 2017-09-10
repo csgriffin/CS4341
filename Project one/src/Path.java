@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Path {
-	ArrayList<Node> nodes = new ArrayList<Node>;
+	ArrayList<Node> nodes = new ArrayList<Node>();
 	
 
 	public void addAll(ArrayList<Node> path) {
