@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Node {
 	char state;
 	ArrayList<Edge> connections;
-	ArrayList<Node> children = new ArrayList<Node>();
+	ArrayList<Node>;
 	Node parent;
 	private float hCost;
 	boolean expanded;
@@ -11,6 +11,7 @@ public class Node {
 	public Node(char state){
 		this.state = state;
 		connections = new ArrayList<Edge>();
+		childern = new ArrayList<Node>();
 		parent = null;
 		expanded = false;
 	}
@@ -25,11 +26,11 @@ public class Node {
 	}
 	
 	public ArrayList<Path> expand(Path oldPath) {
-		if(! expanded) {
 			ArrayList<Path> expPath = new ArrayList<Path>();
 			getChildren();
+			
 			for(int i = 0;i < children.size();i++) {
-				if(!children.get(i).expanded) {
+				if(!oldPath.inPath(children.get(i))) {
 					Path child = new Path();
 					child.addAll(oldPath.getPathNode());
 					child.addOne(0 ,children.get(i));
@@ -54,10 +55,9 @@ public class Node {
 	public float getHCost() {
 		return hCost;
 	}
-	public void addHCost(float hCost) {
-		this.hCost = hCost;
-	}
+	
 	public char getState() {
 		return state;
 	}
 }
+

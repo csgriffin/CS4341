@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import com.sun.org.apache.xalan.internal.xsltc.runtime.Node;
+
 public class Path {
 	ArrayList<Node> nodes = new ArrayList<Node>();
 	float gCost;
@@ -38,4 +40,11 @@ public class Path {
 	public void addGCost(float newG) {
 		gCost += newG;
 	}
+	public boolen inPath(Node n) {
+		if(nodes.indexOf(n) != -1) {
+			return true;
+		}
+		return false;
+	}
 }
+
