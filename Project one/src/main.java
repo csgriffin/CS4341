@@ -71,6 +71,7 @@ public class main {
 		UniformCostSearchMethod uniform = new UniformCostSearchMethod();
 		BeamSearchMethod beam = new BeamSearchMethod();
 		DepthLimitedSearchMethod depthLimited = new DepthLimitedSearchMethod();
+		IterativeDeepeningSearch iterativeDeepening = new IterativeDeepeningSearch();
 		
 		System.out.println("Depth first search");
 		search.genSearch(problem, depthFirst);
@@ -78,6 +79,17 @@ public class main {
 		search.genSearch(problem, breadthFirst);
 		System.out.println("\nDepth limited search method");
 		search.genSearch(problem, depthLimited);
+		System.out.println("\nIterative deepening search");
+		System.out.println("L=0");
+		search.genSearch(problem,  iterativeDeepening);
+		System.out.println("L=" + iterativeDeepening.incrementCount());
+		search.genSearch(problem,  iterativeDeepening);
+		System.out.println("L=" + iterativeDeepening.incrementCount());
+		search.genSearch(problem,  iterativeDeepening);
+		System.out.println("L=" + iterativeDeepening.incrementCount());
+		search.genSearch(problem,  iterativeDeepening);
+		System.out.println("L=" + iterativeDeepening.incrementCount());
+		search.genSearch(problem,  iterativeDeepening);
 		System.out.println("\nUniform search method");
 		problem.printG = true;
 		search.genSearch(problem, uniform);
@@ -139,8 +151,6 @@ public class main {
 		
 		// Add a connection between the nodes.
 		problem.addEdge(firstNode, secondNode, connectionLength);
-		
-		System.out.println("First node: " + firstNodeChar + " Second node: " + secondNodeChar + " Edge weight: " + connectionLength + "\n");
 	}
 	
 	private static void readNextHeuristic(String nextLine) {
@@ -156,8 +166,6 @@ public class main {
 		
 		// Add the heuristic.
 		node.setHCost(heuristic);
-		
-		System.out.println("Node is: " + nodeChar + " Heuristic is: " + heuristic + "\n");
 	}
 
 }
