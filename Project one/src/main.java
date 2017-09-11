@@ -82,22 +82,17 @@ public class main {
 		System.out.println("\nDepth limited search method");
 		System.out.println("Expanded\tQueue");
 		search.genSearch(problem, depthLimited);
+		
 		System.out.println("\nIterative deepening search");
 		System.out.println("L=0");
 		System.out.println("Expanded\tQueue");
-		search.genSearch(problem,  iterativeDeepening);
-		System.out.println("L=" + iterativeDeepening.incrementCount());
-		System.out.println("Expanded\tQueue");
-		search.genSearch(problem,  iterativeDeepening);
-		System.out.println("L=" + iterativeDeepening.incrementCount());
-		System.out.println("Expanded\tQueue");
-		search.genSearch(problem,  iterativeDeepening);
-		System.out.println("L=" + iterativeDeepening.incrementCount());
-		System.out.println("Expanded\tQueue");
-		search.genSearch(problem,  iterativeDeepening);
-		System.out.println("L=" + iterativeDeepening.incrementCount());
-		System.out.println("Expanded\tQueue");
-		search.genSearch(problem,  iterativeDeepening);
+		
+		// Do iterativeDeepening until a solution is found.
+		while(search.genSearch(problem, iterativeDeepening) == null) {
+			System.out.println("L=" + iterativeDeepening.incrementCount());
+			System.out.println("Expanded\tQueue");
+		}
+		
 		System.out.println("\nUniform search method");
 		System.out.println("Expanded\tQueue");
 		problem.printG = true;
