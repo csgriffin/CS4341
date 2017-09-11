@@ -69,7 +69,9 @@ public class main {
 		BreadthFirstSearchMethod breadthFirst = new BreadthFirstSearchMethod();
 		GreedySearchMethod greedy = new GreedySearchMethod();
 		UniformCostSearchMethod uniform = new UniformCostSearchMethod();
+		BeamSearchMethod beam = new BeamSearchMethod();
 		
+		System.out.println("Depth first search");
 		search.genSearch(problem, depthFirst);
 		search.genSearch(problem, breadthFirst);
 		problem.printF = true;
@@ -80,6 +82,9 @@ public class main {
 		problem.printH = false;
 		problem.printG = true;
 		search.genSearch(problem, uniform);
+		problem.printG = false;
+		problem.printH = true;
+		search.genSearch(problem, beam);
 		
 		
 		/*SearchMethods searchMeth;
