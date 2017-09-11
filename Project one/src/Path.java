@@ -6,10 +6,11 @@ public class Path {
 	float gCost;
 	float fCost;
 	int depth;
-	
+	boolean newRow;
 	
 	public Path() {
 		depth = 0;
+		newRow = false;
 	}
 	
 	public Path(Node initialNode) {
