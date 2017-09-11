@@ -38,6 +38,7 @@ public class Node {
 					child.addOne(0 ,children.get(i));
 
 					child.addGCost(connections.get(i).getWeight()+ oldPath.gCost);
+					child.depth = oldPath.depth +1;
 					//System.out.println("Adding edge of length" + connections.get(i).getWeight() + );
 					expPath.add(child);
 				}
