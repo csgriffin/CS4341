@@ -2,9 +2,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class DepthLimited extends SearchMethods{
+public class DepthLimitedSearchMethod extends SearchMethods{
 	public ArrayList<Path> add(ArrayList<Path> opendNodes, ArrayList<Path> queue) {
 		// Sorting the children alphabetically
+		ArrayList <Path> pathsToRemove = new ArrayList<Path>();
+		for(int i = 0; i < opendNodes.size(); i++){
+			if(opendNodes.get(i).nodes.size() > 3){
+				pathsToRemove.add(opendNodes.get(i));
+				}
+			}
+		opendNodes.removeAll(pathsToRemove);
 		Collections.sort(opendNodes, new Comparator<Path>() {
 				@Override
 				public int compare(Path o1, Path o2) {
@@ -14,11 +21,7 @@ public class DepthLimited extends SearchMethods{
 					return first.compareTo(second);
 				}
 		    });
-		for(int i = 0; i < opendNodes.size(); i++){
-      if(opendNodes.get(i).depth(); > 2){
-        opendNodes.remove(i);
-      }
-    }
+
 		//Adding the queue to the children (this way the children are first on the list)
 		opendNodes.addAll(queue);
 		queue = opendNodes;

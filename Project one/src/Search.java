@@ -19,14 +19,14 @@ public class Search {
 		     
 		queue.add(new Path(problem.getNode('S')));
 		while(true) {
-			if(queue.get(0).getLastNode() == null) {
+			if(queue.size() == 0) {
 				return null;
 			}
 			Node curNode = queue.get(0).getLastNode();
 			System.out.print(curNode.state);
 			printQueue(queue, problem);
 			if(curNode.state == problem.solution){
-				System.out.println("goal reached!\n");
+				System.out.println("goal reached!");
 				return curNode;
 			}
 			

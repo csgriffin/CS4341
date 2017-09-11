@@ -70,21 +70,30 @@ public class main {
 		GreedySearchMethod greedy = new GreedySearchMethod();
 		UniformCostSearchMethod uniform = new UniformCostSearchMethod();
 		BeamSearchMethod beam = new BeamSearchMethod();
+		DepthLimitedSearchMethod depthLimited = new DepthLimitedSearchMethod();
 		
 		System.out.println("Depth first search");
 		search.genSearch(problem, depthFirst);
+		System.out.println("\n Breadth first search");
 		search.genSearch(problem, breadthFirst);
-		problem.printF = true;
-		search.genSearch(problem, aStar);
-		problem.printF = false;
-		problem.printH = true;
-		search.genSearch(problem, greedy);
-		problem.printH = false;
+		System.out.println("\n Depth limited search method");
+		search.genSearch(problem, depthLimited);
+		System.out.println("\n Uniform search method");
 		problem.printG = true;
 		search.genSearch(problem, uniform);
 		problem.printG = false;
+		System.out.println("\n Greedy search method");
+		problem.printH = true;
+		search.genSearch(problem, greedy);
+		problem.printH = false;
+		System.out.println("\n A* search method");
+		problem.printF = true;
+		search.genSearch(problem, aStar);
+		problem.printF = false;
+		System.out.println("\n Beam search method (w=2)");
 		problem.printH = true;
 		search.genSearch(problem, beam);
+		problem.printH = false;
 		
 		
 		/*SearchMethods searchMeth;
