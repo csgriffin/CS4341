@@ -28,8 +28,6 @@ public class AStarSearchMethod extends SearchMethods{
 				}
 		    });
 		
-		Collections.reverse(queue);
-		
 		return queue;
 	}	
 }

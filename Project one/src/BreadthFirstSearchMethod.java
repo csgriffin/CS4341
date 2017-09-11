@@ -14,7 +14,6 @@ public class BreadthFirstSearchMethod extends SearchMethods{
 					return first.compareTo(second);
 				}
 		    });
-		Collections.reverse(opendNodes);
 		
 		//Adding the children to the queue
 		queue.addAll(opendNodes);

@@ -14,7 +14,6 @@ public class DepthFirstSearchMethod extends SearchMethods{
 					return first.compareTo(second);
 				}
 		    });
-		Collections.reverse(opendNodes);
 		
 		//Adding the queue to the children (this way the children are first on the list)
 		opendNodes.addAll(queue);

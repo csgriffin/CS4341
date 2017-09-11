@@ -38,6 +38,7 @@ public class Path {
 	}
 	public void addGCost(float newG) {
 		gCost += newG;
+		//System.out.println(gCost);
 	}
 	public boolean inPath(Node n) {
 		if(nodes.indexOf(n) != -1) {

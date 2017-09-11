@@ -64,7 +64,22 @@ public class main {
 		
 		// Initiate an A* search.
 		AStarSearchMethod aStar = new AStarSearchMethod();
+		// Initiate a DFS
+		DepthFirstSearchMethod depthFirst = new DepthFirstSearchMethod();
+		BreadthFirstSearchMethod breadthFirst = new BreadthFirstSearchMethod();
+		GreedySearchMethod greedy = new GreedySearchMethod();
+		UniformCostSearchMethod uniform = new UniformCostSearchMethod();
+		
+		search.genSearch(problem, depthFirst);
+		search.genSearch(problem, breadthFirst);
+		problem.printF = true;
 		search.genSearch(problem, aStar);
+		problem.printF = false;
+		problem.printH = true;
+		search.genSearch(problem, greedy);
+		problem.printH = false;
+		problem.printG = true;
+		search.genSearch(problem, uniform);
 		
 		
 		/*SearchMethods searchMeth;

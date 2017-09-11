@@ -6,8 +6,9 @@ public class Problem {
 	public char solution;
 	public int numExpanded;
 	public boolean iterative;
-	
-	
+	public boolean printH = false;
+	public boolean printG = false;
+	public boolean printF = false;
 	public Problem() {
 		nodes = new ArrayList<Node>();
 		solution = 'G';

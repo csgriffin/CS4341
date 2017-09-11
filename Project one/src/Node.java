@@ -26,18 +26,24 @@ public class Node {
 	}
 	
 	public ArrayList<Path> expand(Path oldPath) {
+		
 			ArrayList<Path> expPath = new ArrayList<Path>();
+
 			getChildren();
-			
 			for(int i = 0;i < children.size();i++) {
 				if(!oldPath.inPath(children.get(i))) {
+
 					Path child = new Path();
 					child.addAll(oldPath.getPathNode());
 					child.addOne(0 ,children.get(i));
-					child.addGCost(connections.get(i).getWeight());
+
+					child.addGCost(connections.get(i).getWeight()+ oldPath.gCost);
+					//System.out.println("Adding edge of length" + connections.get(i).getWeight() + );
 					expPath.add(child);
 				}
 			}
+
+			children = new ArrayList<Node>();
 			return expPath;
 	}
 
