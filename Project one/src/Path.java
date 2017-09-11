@@ -9,7 +9,7 @@ public class Path {
 	
 	
 	public Path() {
-		
+		depth = 0;
 	}
 	
 	public Path(Node initialNode) {
