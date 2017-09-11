@@ -23,7 +23,7 @@ public class Search {
 				return null;
 			}
 			Node curNode = queue.get(0).getLastNode();
-			System.out.print(curNode.state);
+			System.out.print("   "+curNode.state);
 			printQueue(queue, problem);
 			if(curNode.state == problem.solution){
 				System.out.println("goal reached!");
@@ -39,7 +39,7 @@ public class Search {
 	}
 	
 	private void printQueue(ArrayList<Path> queue, Problem problem) {
-		System.out.print("[");
+		System.out.print("\t\t[");
 		for (int i = 0; i< queue.size(); i++) {
 			if(problem.printF) {System.out.print(queue.get(i).getFCost());}
 			if(problem.printH) {System.out.print(queue.get(i).getLastNode().getHCost());}
@@ -47,7 +47,9 @@ public class Search {
 			System.out.print("<");
 			
 			for (int j=0; j<queue.get(i).nodes.size();j++) {
-				System.out.print(queue.get(i).nodes.get(j).state + ",");
+				System.out.print(queue.get(i).nodes.get(j).state);
+				if(j < queue.get(i).nodes.size()-1)
+					System.out.print(",");
 			}
 			System.out.print(">");
 		}
